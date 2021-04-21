@@ -21,19 +21,19 @@ namespace AuthenticationForPension.Repository
         }
 
 
-        public int Verify(string aadhar,string name)
+        public string Verify(string aadhar,string name)
         {
             PensionerDetail user= users.PensionerDetails.FirstOrDefault(x => x.AadhaarNo == aadhar && x.Name == name);
           if(user!=null)
             {
                 if (user.Password == null)
                 {
-                    return (1);
+                    return "yes";
                 }
 
-                return (0);
+                return "No";
             }
-            return (404);
+            return "Not Found";
         }
 
         public PensionerDetail AddPassword(string aadhar, AddPassword addPassword)

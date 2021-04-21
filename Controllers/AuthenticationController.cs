@@ -38,7 +38,7 @@ namespace AuthenticationForPension.Controllers
         {
             _log4net.Info(" Http VerifyUser is Invoked");
 
-            int obj = manager.Verify(user.AadhaarNo, user.Name);
+            string obj = manager.Verify(user.AadhaarNo, user.Name);
  
             return Ok(obj);
         }
@@ -61,7 +61,7 @@ namespace AuthenticationForPension.Controllers
 
         [AllowAnonymous]
         [HttpPost("AuthenicateUser")]
-        public IActionResult AuthenticateUser([FromBody] PensionerDetail user)
+        public IActionResult AuthenticateUser([FromBody] AddPassword user)
         {
            _log4net.Info(" Http Authentication request Initiated");
             var token = manager.Authenticate(user.AadhaarNo, user.Password);

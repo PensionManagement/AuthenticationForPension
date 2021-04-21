@@ -10,7 +10,7 @@ namespace AuthenticationForPension.Repository
     {
         public string Authenticate(string aadhar, string password);
 
-        public int Verify(string aadhar, string name);
+        public string Verify(string aadhar, string name);
        // public string AddPassword(string aadhar, string password);
         //IEnumerable<PensionerDetail> GetPensionerDetails();
         PensionerDetail AddPassword(string aadhar,AddPassword addPassword);
